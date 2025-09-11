@@ -773,7 +773,7 @@
             border-radius: 25px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
-
+        
         .form-container iframe,
         .contact-container iframe {
             width: 100%;
@@ -1071,6 +1071,11 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .form-container, .contact-container {
+                padding: 1.5rem;
+                max-width: 100%; /* Permite que ocupe a largura total */
+            }
 
             .form-row {
                 grid-template-columns: 1fr;
@@ -1143,7 +1148,7 @@
                     
                     <div class="info-grid">
                         <div class="info-card">
-                            <span class="card-icon">📅</span>
+                            <span class="card-icon"><i class="fas fa-calendar-alt"></i></span>
                             <h3>Data e Horários</h3>
                             <p><span class="highlight">02 a 04 de Janeiro de 2026</span><br>
                             Quinta-feira às 14h00 até<br>
