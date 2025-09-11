@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acampamento Jardim Algarve</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #1a1a1a;
+            --color-secondary: #333333;
+            --color-accent: #666666;
+            --color-light-bg: #f0f0f0;
+            --color-dark-text: #333333;
+            --color-white: #ffffff;
+            --color-gray-text: #666666;
+            --color-border: #cccccc;
+            --color-green-accent: #6cbe6c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-dark-text);
+            overflow-x: hidden;
+            background-color: var(--color-light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+            color: var(--color-white);
+        }
+        
+        .logo h1 .main-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .logo h1 .sub-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-white);
+            transition: 0.3s;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="%231a1a1a"/><stop offset="100%" stop-color="%23333333"/></linearGradient></defs><rect width="100" height="100" fill="url(%23g)"/><path d="M0,70 Q25,60 50,70 T100,70 L100,100 L0,100 Z" fill="%23666666" opacity="0.3"/><circle cx="80" cy="25" r="5" fill="%23f0f0f0" opacity="0.5"/><circle cx="90" cy="40" r="3" fill="%23f0f0f0" opacity="0.4"/></svg>') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(51, 51, 51, 0.6));
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: var(--color-green-accent);
+            color: var(--color-white);
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(108, 190, 108, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #58a258;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(108, 190, 108, 0.5);
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-gray-text);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+        
+        .info-card h3 {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .info-card p {
+            font-size: 1rem;
+            color: var(--color-dark-text);
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--color-secondary);
+        }
+
+        .rules-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .rules-list li {
+            background: var(--color-white);
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            padding-left: 3.5rem;
+        }
+
+        .rules-list li::before {
+            content: "✓";
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-green-accent);
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .rules-list li strong {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+        
+        .gallery-slider {
+            background-color: var(--color-primary);
+            padding: 5rem 0;
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-content {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-item {
+            min-width: 100%;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: var(--color-white);
+        }
+
+        .slider-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .slide-text {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .slide-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-text p {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: var(--color-secondary);
+            transform: scale(1.2);
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--color-white);
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            z-index: 2;
+            transition: background 0.3s ease;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .arrow-prev {
+            left: 10px;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .arrow-next {
+            right: 10px;
+            border-radius: 0 50px 50px 0;
+        }
+
+        .slide1 { background-image: url('https://via.placeholder.com/900x600/1a1a1a/f0f0f0?text=Momentos+de+Adora%C3%A7%C3%A3o'); }
+        .slide2 { background-image: url('https://via.placeholder.com/900x600/333333/f0f0f0?text=Conex%C3%A3o+com+a+Natureza'); }
+        .slide3 { background-image: url('https://via.placeholder.com/900x600/666666/ffffff?text=Amizades+e+Comunh%C3%A3o'); }
+        .slide4 { background-image: url('https://via.placeholder.com/900x600/1a1a1a/f0f0f0?text=Fogueira+e+Hist%C3%B3rias'); }
+
+        .pix-section {
+            background: var(--color-white);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .pix-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            background-color: var(--color-light-bg);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .pix-info h3 {
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .pix-key {
+            background: var(--color-light-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 1.1rem;
+            word-break: break-all;
+            color: var(--color-dark-text);
+        }
+
+        .copy-button {
+            background: var(--color-accent);
+            color: var(--color-white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background: #555555;
+            transform: translateY(-2px);
+        }
+
+        .copy-button.copied {
+            background: var(--color-green-accent);
+            color: var(--color-white);
+        }
+
+        .page {
+            min-height: 100vh;
+            background: var(--color-light-bg);
+            padding: 6rem 0;
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+
+        .form-container, .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--color-white);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button {
+            background: var(--color-dark-text);
+            color: var(--color-white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #222222;
+            transform: translateX(-5px);
+        }
+
+        .form-title, .contact-title {
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--color-border);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--color-light-bg);
+            color: var(--color-dark-text);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            background: var(--color-white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-button {
+            background: var(--color-secondary);
+            color: var(--color-white);
+            padding: 18px 30px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .submit-button:hover {
+            background: var(--color-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1.5rem;
+        }
+        
+        .contact-info-item .icon {
+            font-size: 2.5rem;
+            color: var(--color-green-accent);
+        }
+        
+        .contact-info-item p {
+            font-size: 1.1rem;
+            color: var(--color-dark-text);
+            font-weight: 500;
+        }
+        
+        footer {
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .footer-logo {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .footer-logo .main-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .footer-logo .sub-title {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+        
+        .popup {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--color-green-accent);
+            color: var(--color-white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0s 0.4s;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .popup.show {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .form-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .form-feedback.success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        .form-feedback.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        
+        #scrollToTopBtn {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--color-primary); /* Cor escura do site */
+            color: var(--color-white);
+            cursor: pointer;
+            padding: 15px 18px; /* Ajuste para o ícone */
+            border-radius: 50%;
+            font-size: 1.5rem; /* Tamanho do ícone */
+            opacity: 0.9;
+            transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: var(--color-secondary); /* Um pouco mais claro no hover */
+            opacity: 1;
+            transform: translateY(-3px); /* Leve efeito de subir */
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            header {
+                padding: 1rem 0;
+            }
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            nav {
+                display: block;
+                position: static;
+                width: 100%;
+                background: none;
+                box-shadow: none;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.5rem 1rem;
+                margin-top: 1rem;
+                padding: 0;
+            }
+            nav a {
+                font-size: 0.9rem;
+                padding: 5px 8px;
+            }
+
+            .hero {
+                height: 60vh;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .pix-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .slider-arrow {
+                display: none;
+            }
+            
+            .slider-item {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>
+                        <span class="main-title">Acampamento</span>
+                        <span class="sub-title">Jardim Algarve</span>
+                    </h1>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="#home" onclick="showHome()">Início</a></li>
+                        <li><a href="#info">Informações</a></li>
+                        <li><a href="#regras">Regras</a></li>
+                        <li><a href="local.html">O Local</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#" onclick="showRegistration()">Inscreva-se</a></li>
+                        <li><a href="#" onclick="showContact()">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="homePage" class="page active">
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <h1>Venha Viver um Acampamento Inesquecível</h1>
+                    <p>Uma experiência de fé, comunhão e renovação espiritual em meio à natureza exuberante.</p>
+                    <a href="#" class="cta-button" onclick="showRegistration()">Garanta sua Vaga Agora</a>
+                </div>
+            </section>
+
+            <section id="info" class="event-info">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Informações do Evento</h2>
+                        <p class="section-subtitle">Tudo o que você precisa saber para se preparar para este momento especial.</p>
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <span class="card-icon">📅</span>
+                            <h3>Data e Horários</h3>
+                            <p><span class="highlight">02 a 04 de Janeiro de 2026</span><br>
+                            Quinta-feira às 14h00 até<br>
+                            Sábado às 16h00</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <span class="card-icon">🌍</span>
+                            <h3>Localização</h3>
+                            <p><span class="highlight">Sítio Jardim Algarve</span><br>
+                            Estrada Rural do Sítio, 123<br>
+                            São Paulo/SP</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <span class="card-icon">💰</span>
+                            <h3>Investimento</h3>
+                            <p><span class="highlight">R$ 200,00</span> por pessoa<br>
+                            Inclui hospedagem, refeições e atividades.
+                        </div>
+                        
+                        <div class="info-card">
+                            <span class="card-icon">🎯</span>
+                            <h3>Atividades</h3>
+                            <p>Cultos, trilhas, fogueira, recreação e muito mais!</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <span class="card-icon">💳</span>
+                            <h3>Pagamento</h3>
+                            <p>PIX (5% de desconto), Cartão ou Dinheiro na secretaria.</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <span class="card-icon">🎒</span>
+                            <h3>O que levar</h3>
+                            <p>Roupas de frio, bíblia, itens de higiene e repelente.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="regras" class="rules-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Regras do Acampamento</h2>
+                        <p class="section-subtitle">Para garantir que todos tenham uma experiência segura e abençoada.</p>
+                    </div>
+                    <ul class="rules-list">
+                        <li>
+                            <strong>Horários:</strong> Respeite os horários de início e término das atividades e refeições.
+                        </li>
+                        <li>
+                            <strong>Alojamentos:</strong> Mantenha a organização e a limpeza em seu alojamento e nas áreas comuns.
+                        </li>
+                        <li>
+                            <strong>Respeito:</strong> Trate todos com respeito e amor, praticando a comunhão e a humildade.
+                        </li>
+                        <li>
+                            <strong>Preservação:</strong> Cuide da natureza e das instalações do sítio. Não jogue lixo no chão.
+                        </li>
+                        <li>
+                            <strong>Segurança:</strong> Não se afaste do grupo ou das áreas designadas sem autorização.
+                        </li>
+                        <li>
+                            <strong>Vestimenta:</strong> Use roupas adequadas para o ambiente do acampamento e para as atividades propostas.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="galeria" class="gallery-slider">
+                <div class="container">
+                    <div class="section-header" style="color: var(--color-white);">
+                        <h2 class="section-title" style="color: var(--color-white);">Galeria de Momentos</h2>
+                        <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Confira um pouco da experiência que preparamos para você.</p>
+                    </div>
+                    
+                    <div class="slider-container">
+                        <div class="slider-content">
+                            <div class="slider-item slide1" aria-label="Foto de momentos de adoração. Cultos inspiradores e louvor em comunhão.">
+                                <div class="slide-text">
+                                    <h2>Momentos de Adoração</h2>
+                                    <p>Cultos inspiradores e louvor em comunhão.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item slide2" aria-label="Foto de conexão com a natureza. Descubra a beleza da criação de Deus nas trilhas do sítio.">
+                                <div class="slide-text">
+                                    <h2>Conexão com a Natureza</h2>
+                                    <p>Descubra a beleza da criação de Deus nas trilhas do sítio.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item slide3" aria-label="Foto de novas amizades. Crie laços e compartilhe experiências com sua família e novos amigos.">
+                                <div class="slide-text">
+                                    <h2>Novas Amizades</h2>
+                                    <p>Crie laços e compartilhe experiências com sua família e novos amigos.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item slide4" aria-label="Foto de fogueira e histórias. Noite de louvor, testemunhos e muita alegria ao redor da fogueira.">
+                                <div class="slide-text">
+                                    <h2>Fogueira e Histórias</h2>
+                                    <p>Noite de louvor, testemunhos e muita alegria ao redor da fogueira.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)" aria-label="Slide anterior">&#10094;</button>
+                        <button class="slider-arrow arrow-next" onclick="changeSlide(1)" aria-label="Próximo slide">&#10095;</button>
+                        
+                        <div class="slider-nav">
+                            <div class="nav-dot active" onclick="goToSlide(0)"></div>
+                            <div class="nav-dot" onclick="goToSlide(1)"></div>
+                            <div class="nav-dot" onclick="goToSlide(2)"></div>
+                            <div class="nav-dot" onclick="goToSlide(3)"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pix-info-section">
+                <div class="container">
+                    <div class="pix-section">
+                        <h2 style="margin-bottom: 2rem; color: var(--color-primary);">💳 Pagamento via PIX</h2>
+                        <div class="pix-container">
+                            <div class="qr-code">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 4rem; margin-bottom: 10px;">📱</div>
+                                    <div style="font-size: 0.9rem;">QR Code PIX</div>
+                                </div>
+                            </div>
+                            <div class="pix-info">
+                                <h3>🔑 Chave PIX</h3>
+                                <div class="pix-key" id="pixKey">julio.balestrin@email.com</div>
+                                <div class="pix-actions">
+                                    <button class="copy-button" onclick="copyPixKey()">
+                                        <span id="copyButtonText">📋 Copiar Chave PIX</span>
+                                    </button>
+                                </div>
+                                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8; color: var(--color-gray-text);">
+                                    <strong>Beneficiário:</strong> Júlio Balestrin<br>
+                                    <strong>Valor:</strong> R$ 200,00 (ou R$ 190,00 com desconto à vista)
+                                </p>
+                            </div>
+                        </div>
+                        <div style="margin-top: 2rem; padding: 1rem; background: var(--color-light-bg); border-radius: 10px; color: var(--color-dark-text);">
+                            <p><strong>📌 Instruções:</strong></p>
+                            <p>1. Escaneie o QR Code ou copie a chave PIX</p>
+                            <p>2. Faça o pagamento no seu banco</p>
+                            <p>3. Envie o comprovante via WhatsApp: (11) 99999-9999</p>
+                            <p>4. Aguarde a confirmação da inscrição</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="registrationPage" class="page">
+            <div class="container">
+                <div class="form-container">
+                    <button class="back-button" onclick="showHome()">← Voltar ao Site</button>
+                    <h2 class="form-title">Formulário de Inscrição</h2>
+                    
+                    <form id="registrationForm" onsubmit="submitRegistration(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Nome Completo *</label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Seu nome completo">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Telefone/WhatsApp *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999">
+                            </div>
+                            <div class="form-group">
+                                <label for="birthDate">Data de Nascimento *</label>
+                                <input type="date" id="birthDate" name="birthDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Endereço Completo</label>
+                            <input type="text" id="address" name="address" placeholder="Rua, número, bairro, cidade - CEP">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="emergencyContact">Contato de Emergência</label>
+                                <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Nome do contato">
+                            </div>
+                            <div class="form-group">
+                                <label for="emergencyPhone">Telefone de Emergência</label>
+                                <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="(11) 99999-9999">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="church">Igreja/Congregação</label>
+                            <input type="text" id="church" name="church" placeholder="Nome da sua igreja (se aplicável)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dietary">Restrições Alimentares ou Alergias</label>
+                            <textarea id="dietary" name="dietary" placeholder="Descreva qualquer restrição alimentar, alergia ou necessidade especial"></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="paymentMethod">Forma de Pagamento *</label>
+                                <select id="paymentMethod" name="paymentMethod" required>
+                                    <option value="">Selecione</option>
+                                    <option value="pix">PIX (5% desconto - R$ 190,00)</option>
+                                    <option value="cartao">Cartão 2x sem juros</option>
+                                    <option value="dinheiro">Dinheiro na secretaria</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tshirtSize">Tamanho da Camiseta</label>
+                                <select id="tshirtSize" name="tshirtSize">
+                                    <option value="">Selecione</option>
+                                    <option value="P">P</option>
+                                    <option value="M">M</option>
+                                    <option value="G">G</option>
+                                    <option value="GG">GG</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comments">Comentários ou Observações</label>
+                            <textarea id="comments" name="comments" placeholder="Alguma informação adicional que gostaria de compartilhar conosco"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Confirmar Inscrição</button>
+                    </form>
+                    
+                    <div id="form-feedback" class="form-feedback"></div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="contactPage" class="page">
+            <div class="container">
+                <div class="contact-container">
+                    <button class="back-button" onclick="showHome()">← Voltar ao Site</button>
+                    <h2 class="contact-title">Entre em Contato</h2>
+                    <p style="text-align: center; margin-bottom: 2rem; color: var(--color-gray-text);">Estamos aqui para ajudar com qualquer dúvida.</p>
+                    
+                    <div class="contact-info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <p><strong>Telefone/WhatsApp:</strong></p>
+                            <p>(11) 99999-9999</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <span class="icon">📧</span>
+                        <div>
+                            <p><strong>Email:</strong></p>
+                            <p>contato@igreja.com.br</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <p><strong>Endereço da Igreja:</strong></p>
+                            <p>Rua da Igreja, 123 - São Paulo/SP</p>
+                        </div>
+                    </div>
+                    
+                    <hr style="margin: 3rem 0; border: 1px solid var(--color-border);">
+                    <div class="form-section">
+                        <h2 style="text-align: center; color: var(--color-primary); margin-bottom: 1.5rem;">Envie sua Mensagem</h2>
+                        
+                        </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="pixPopup" class="popup">Chave PIX copiada!</div>
+
+    <button onclick="scrollToTop()" id="scrollToTopBtn" aria-label="Subir ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="main-title">Acampamento</span>
+                    <span class="sub-title">Jardim Algarve</span>
+                </div>
+                <p>&copy; 2025 Igreja - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slider-item');
+        const dots = document.querySelectorAll('.nav-dot');
+        const sliderContent = document.querySelector('.slider-content');
+        
+        function showSlide(n) {
+            slideIndex = (n + slides.length) % slides.length;
+            sliderContent.style.transform = `translateX(${-slideIndex * 100}%)`;
+            
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[slideIndex].classList.add('active');
+        }
+        
+        function changeSlide(direction) {
+            showSlide(slideIndex + direction);
+        }
+        
+        function goToSlide(n) {
+            showSlide(n);
+        }
+        
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+        
+        function showHome() {
+            document.getElementById('homePage').classList.add('active');
+            document.getElementById('registrationPage').classList.remove('active');
+            document.getElementById('contactPage').classList.remove('active');
+            window.scrollTo(0, 0);
+        }
+        
+        function showRegistration() {
+            document.getElementById('homePage').classList.remove('active');
+            document.getElementById('registrationPage').classList.add('active');
+            document.getElementById('contactPage').classList.remove('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showContact() {
+            document.getElementById('homePage').classList.remove('active');
+            document.getElementById('registrationPage').classList.remove('active');
+            document.getElementById('contactPage').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function submitRegistration(event) {
+            event.preventDefault();
+            const form = event.target;
+            const feedbackDiv = document.getElementById('form-feedback');
+
+            // Simula o envio
+            const isSuccess = true; // Altere para false para simular erro
+
+            if (isSuccess) {
+                feedbackDiv.textContent = '✅ Inscrição enviada com sucesso! Aguarde a confirmação.';
+                feedbackDiv.classList.add('success');
+                feedbackDiv.classList.remove('error');
+                form.reset();
+            } else {
+                feedbackDiv.textContent = '❌ Ocorreu um erro ao enviar a inscrição. Tente novamente.';
+                feedbackDiv.classList.add('error');
+                feedbackDiv.classList.remove('success');
+            }
+        }
+        
+        function copyPixKey() {
+            const pixKey = document.getElementById('pixKey').textContent;
+            const copyButton = document.getElementById('copyButtonText');
+            const pixPopup = document.getElementById('pixPopup');
+            
+            navigator.clipboard.writeText(pixKey).then(() => {
+                copyButton.textContent = '✅ Chave Copiada!';
+                copyButton.parentElement.classList.add('copied');
+                
+                pixPopup.classList.add('show');
+                
+                setTimeout(() => {
+                    copyButton.textContent = '📋 Copiar Chave PIX';
+                    copyButton.parentElement.classList.remove('copied');
+                    pixPopup.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert('Erro ao copiar a chave PIX. Por favor, copie manualmente: ' + pixKey);
+            });
+        }
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#') && this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Lógica do botão de Subir ao Topo
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            showHome();
+        });
+    </script>
+</body>
+</html>

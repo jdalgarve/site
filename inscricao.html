@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Acampamento Jardim Algarve</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2980b9, #3498db, #9b59b6);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #fff, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        main {
+            padding-top: 100px;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .back-button {
+            background: #95a5a6;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #7f8c8d;
+            transform: translateX(-5px);
+        }
+
+        .form-title {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ecf0f1;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            background: white;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 18px 30px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(135deg, #2980b9, #21618c);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(41, 128, 185, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.5rem 1rem;
+                margin-top: 1rem;
+                padding: 0;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🏕️ Acampamento Jardim Algarve</h1>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="acampamento_jardim_site.html">Início</a></li>
+                        <li><a href="local.html">O Local</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="form-container">
+                <a href="acampamento_jardim_site.html" class="back-button">← Voltar ao Site</a>
+                <h2 class="form-title">Formulário de Inscrição</h2>
+                
+                <form id="registrationForm" onsubmit="submitRegistration(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Nome Completo *</label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="Seu primeiro nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Sobrenome *</label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Seu sobrenome">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone/WhatsApp *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birthDate">Data de Nascimento *</label>
+                            <input type="date" id="birthDate" name="birthDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Sexo</label>
+                            <select id="gender" name="gender">
+                                <option value="">Selecione</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Endereço Completo</label>
+                        <input type="text" id="address" name="address" placeholder="Rua, número, bairro, cidade - CEP">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emergencyContact">Contato de Emergência</label>
+                            <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Nome do contato">
+                        </div>
+                        <div class="form-group">
+                            <label for="emergencyPhone">Telefone de Emergência</label>
+                            <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="(11) 99999-9999">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="church">Igreja/Congregação</label>
+                        <input type="text" id="church" name="church" placeholder="Nome da sua igreja (se aplicável)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dietary">Restrições Alimentares ou Alergias</label>
+                        <textarea id="dietary" name="dietary" placeholder="Descreva qualquer restrição alimentar, alergia ou necessidade especial"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="paymentMethod">Forma de Pagamento *</label>
+                            <select id="paymentMethod" name="paymentMethod" required>
+                                <option value="">Selecione</option>
+                                <option value="pix">PIX (5% desconto - R$ 190,00)</option>
+                                <option value="cartao">Cartão 2x sem juros</option>
+                                <option value="dinheiro">Dinheiro na secretaria</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tshirtSize">Tamanho da Camiseta</label>
+                            <select id="tshirtSize" name="tshirtSize">
+                                <option value="">Selecione</option>
+                                <option value="PP">PP</option>
+                                <option value="P">P</option>
+                                <option value="M">M</option>
+                                <option value="G">G</option>
+                                <option value="GG">GG</option>
+                                <option value="XGG">XGG</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comments">Comentários ou Observações</label>
+                        <textarea id="comments" name="comments" placeholder="Alguma informação adicional que gostaria de compartilhar conosco"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Confirmar Inscrição</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>🏕️ Acampamento Jardim Algarve</h3>
+                <p>&copy; 2025 Igreja - Todos os direitos reservados</p>
+                <p>📞 Para informações: (11) 99999-9999</p>
+                <p>📧 Email: contato@igreja.com.br</p>
+                <p>📍 Endereço da Igreja: Rua da Igreja, 123 - São Paulo/SP</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    💳 PIX: julio.balestrin@email.com (Júlio Balestrin)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form handling
+        function submitRegistration(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Validate required fields
+            if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.birthDate || !data.paymentMethod) {
+                alert('Por favor, preencha todos os campos obrigatórios marcados com *');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitButton = event.target.querySelector('.submit-button');
+            submitButton.textContent = 'Processando...';
+            submitButton.disabled = true;
+            
+            setTimeout(() => {
+                let message = '🎉 Inscrição realizada com sucesso!\n\n';
+                message += `📝 Dados registrados para: ${data.firstName} ${data.lastName}\n`;
+                message += `📅 Evento: 02 a 04 de Janeiro de 2026\n`;
+                message += `💰 Valor: R$ 200,00\n`;
+                message += `💳 Forma de pagamento: ${data.paymentMethod}\n\n`;
+                
+                if (data.paymentMethod === 'pix') {
+                    message += '💡 Próximos passos:\n';
+                    message += '1. Faça o pagamento via PIX\n';
+                    message += '2. Chave: julio.balestrin@email.com\n';
+                    message += '3. Envie o comprovante: (11) 99999-9999\n\n';
+                }
+                
+                message += 'Em breve entraremos em contato com mais informações!\n\n';
+                message += 'Obrigado por se inscrever! 🙏';
+                
+                alert(message);
+                
+                // Reset form
+                event.target.reset();
+                submitButton.textContent = 'Confirmar Inscrição';
+                submitButton.disabled = false;
+                
+                // Redirect back to home
+                window.location.href = 'acampamento_jardim_site.html';
+            }, 2000);
+        }
+        
+        // Phone formatting
+        function formatPhone(input) {
+            let value = input.value.replace(/\D/g, '');
+            if (value.length >= 11) {
+                value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            } else if (value.length >= 6) {
+                value = value.replace(/(\d{2})(\d{4})(\d+)/, '($1) $2-$3');
+            } else if (value.length >= 2) {
+                value = value.replace(/(\d{2})(\d+)/, '($1) $2');
+            }
+            input.value = value;
+        }
+        
+        // Apply phone formatting
+        document.getElementById('phone').addEventListener('input', function() {
+            formatPhone(this);
+        });
+        
+        document.getElementById('emergencyPhone').addEventListener('input', function() {
+            formatPhone(this);
+        });
+    </script>
+</body>
+</html>

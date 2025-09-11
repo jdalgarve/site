@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conheça o Local - Acampamento Jardim Algarve</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1a1a1a;
+            --color-secondary: #333333;
+            --color-accent: #666666;
+            --color-light-bg: #f0f0f0;
+            --color-dark-text: #333333;
+            --color-white: #ffffff;
+            --color-gray-text: #666666;
+            --color-border: #cccccc;
+            --color-green-accent: #6cbe6c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-dark-text);
+            overflow-x: hidden;
+            background-color: var(--color-light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+            color: var(--color-white);
+        }
+        
+        .logo h1 .main-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .logo h1 .sub-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            padding-top: 100px;
+        }
+
+        .local-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--color-white);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button {
+            background: var(--color-dark-text);
+            color: var(--color-white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #222222;
+            transform: translateX(-5px);
+        }
+        
+        .local-title {
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .photo-video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        
+        .media-container {
+            background: var(--color-light-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 para vídeos */
+            height: 0;
+        }
+
+        .media-container iframe,
+        .media-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 40px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .footer-logo .main-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .footer-logo .sub-title {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.5rem 1rem;
+                margin-top: 1rem;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>
+                        <span class="main-title">Acampamento</span>
+                        <span class="sub-title">Jardim Algarve</span>
+                    </h1>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="local-container">
+                <a href="index.html" class="back-button">← Voltar ao Site</a>
+                <h2 class="local-title">Conheça o Local</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: var(--color-gray-text);">
+                    O Sítio Jardim Algarve é um lugar de paz e beleza natural. Confira as fotos e vídeos para ter um gostinho do que te espera!
+                </p>
+                
+                <div class="photo-video-grid">
+                    <div class="media-container">
+                        <img src="https://via.placeholder.com/600x400/cccccc/ffffff?text=FOTO+1" alt="Local do Acampamento - Foto 1">
+                    </div>
+                    <div class="media-container">
+                        <img src="https://via.placeholder.com/600x400/cccccc/ffffff?text=FOTO+2" alt="Local do Acampamento - Foto 2">
+                    </div>
+                    
+                    <div class="media-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-container">
+                        <iframe src="https://player.vimeo.com/video/420448135" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="media-container">
+                        <img src="https://via.placeholder.com/600x400/cccccc/ffffff?text=FOTO+3" alt="Local do Acampamento - Foto 3">
+                    </div>
+                    <div class="media-container">
+                        <img src="https://via.placeholder.com/600x400/cccccc/ffffff?text=FOTO+4" alt="Local do Acampamento - Foto 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="main-title">Acampamento</span>
+                    <span class="sub-title">Jardim Algarve</span>
+                </div>
+                <p>&copy; 2025 Igreja - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
