@@ -764,19 +764,19 @@
             <div class="header-content">
                 <div class="logo">
                     <h1>
-                        <span class="main-title">Acampamento</span>
-                        <span class="sub-title">Jardim Algarve</span>
+                        <span class="main-title">ACAMPAMENTO</span>
+                        <span class="sub-title">JARDIM ALGARVE</span>
                     </h1>
                 </div>
                 <nav id="navbar">
                     <ul>
-                        <li><a href="#home" onclick="showHome()">Início</a></li>
-                        <li><a href="#info">Informações</a></li>
-                        <li><a href="#regras">Regras</a></li>
-                        <li><a href="local.html">O Local</a></li>
-                        <li><a href="#galeria">Galeria</a></li>
-                        <li><a href="#" onclick="showRegistration()">Inscreva-se</a></li>
-                        <li><a href="#" onclick="showContact()">Contato</a></li>
+                        <li><a href="#home" onclick="showHome()">INÍCIO</a></li>
+                        <li><a href="#info">INFORMAÇÕES</a></li>
+                        <li><a href="#regras">REGRAS</a></li>
+                        <li><a href="local.html">O LOCAL</a></li>
+                        <li><a href="#galeria">GALERIA</a></li>
+                        <li><a href="#" onclick="showRegistration()">INSCREVA-SE</a></li>
+                        <li><a href="#" onclick="showContact()">CONTATO</a></li>
                     </ul>
                 </nav>
             </div>
@@ -827,13 +827,13 @@
                         <div class="info-card">
                             <span class="card-icon">🎯</span>
                             <h3>Atividades</h3>
-                            <p>Cultos, trilhas, fogueira, recreação e muito mais!</p>
+                            <p>Cultos, trilhas, piscinas, recreação e muito mais!</p>
                         </div>
                         
                         <div class="info-card">
                             <span class="card-icon">💳</span>
                             <h3>Pagamento</h3>
-                            <p>PIX (5% de desconto), Cartão ou Dinheiro na secretaria.</p>
+                            <p>PIX, Cartão ou Dinheiro</p>
                         </div>
                         
                         <div class="info-card">
@@ -935,15 +935,15 @@
                             </div>
                             <div class="pix-info">
                                 <h3>🔑 Chave PIX</h3>
-                                <div class="pix-key" id="pixKey">julio.balestrin@email.com</div>
+                                <div class="pix-key" id="pixKey">43377700382</div>
                                 <div class="pix-actions">
                                     <button class="copy-button" onclick="copyPixKey()">
                                         <span id="copyButtonText">📋 Copiar Chave PIX</span>
                                     </button>
                                 </div>
                                 <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8; color: var(--color-gray-text);">
-                                    <strong>Beneficiário:</strong> Júlio Balestrin<br>
-                                    <strong>Valor:</strong> R$ 200,00 (ou R$ 190,00 com desconto à vista)
+                                    <strong>Beneficiário:</strong> Paulo Fernandes da Costa<br>
+                                    <strong>Valor:</strong> R$ 200,00 por Pessoa
                                 </p>
                             </div>
                         </div>
@@ -951,8 +951,8 @@
                             <p><strong>📌 Instruções:</strong></p>
                             <p>1. Escaneie o QR Code ou copie a chave PIX</p>
                             <p>2. Faça o pagamento no seu banco</p>
-                            <p>3. Envie o comprovante via WhatsApp: (11) 99999-9999</p>
-                            <p>4. Aguarde a confirmação da inscrição</p>
+                            <p>3. Envie o comprovante via WhatsApp: 11 97139-8041</p>
+                            <p>4. Preencha o Formulário de Inscrição presente neste site com suas informações</p>
                         </div>
                     </div>
                 </div>
@@ -965,84 +965,7 @@
                     <button class="back-button" onclick="showHome()">← Voltar ao Site</button>
                     <h2 class="form-title">Formulário de Inscrição</h2>
                     
-                    <form id="registrationForm" onsubmit="submitRegistration(event)">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="fullName">Nome Completo *</label>
-                                <input type="text" id="fullName" name="fullName" required placeholder="Seu nome completo">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Telefone/WhatsApp *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999">
-                            </div>
-                            <div class="form-group">
-                                <label for="birthDate">Data de Nascimento *</label>
-                                <input type="date" id="birthDate" name="birthDate" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="address">Endereço Completo</label>
-                            <input type="text" id="address" name="address" placeholder="Rua, número, bairro, cidade - CEP">
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="emergencyContact">Contato de Emergência</label>
-                                <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Nome do contato">
-                            </div>
-                            <div class="form-group">
-                                <label for="emergencyPhone">Telefone de Emergência</label>
-                                <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="(11) 99999-9999">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="church">Igreja/Congregação</label>
-                            <input type="text" id="church" name="church" placeholder="Nome da sua igreja (se aplicável)">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="dietary">Restrições Alimentares ou Alergias</label>
-                            <textarea id="dietary" name="dietary" placeholder="Descreva qualquer restrição alimentar, alergia ou necessidade especial"></textarea>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="paymentMethod">Forma de Pagamento *</label>
-                                <select id="paymentMethod" name="paymentMethod" required>
-                                    <option value="">Selecione</option>
-                                    <option value="pix">PIX (5% desconto - R$ 190,00)</option>
-                                    <option value="cartao">Cartão 2x sem juros</option>
-                                    <option value="dinheiro">Dinheiro na secretaria</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="tshirtSize">Tamanho da Camiseta</label>
-                                <select id="tshirtSize" name="tshirtSize">
-                                    <option value="">Selecione</option>
-                                    <option value="P">P</option>
-                                    <option value="M">M</option>
-                                    <option value="G">G</option>
-                                    <option value="GG">GG</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="comments">Comentários ou Observações</label>
-                            <textarea id="comments" name="comments" placeholder="Alguma informação adicional que gostaria de compartilhar conosco"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-button">Confirmar Inscrição</button>
-                    </form>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeXnls2SQaSrU4RkcMYk4QPJonQ3LBkV2AYE2j8ycxXZo91ng/viewform?embedded=true" width="640" height="1192" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
                     
                     <div id="form-feedback" class="form-feedback"></div>
                     
@@ -1061,7 +984,7 @@
                         <span class="icon">📞</span>
                         <div>
                             <p><strong>Telefone/WhatsApp:</strong></p>
-                            <p>(11) 99999-9999</p>
+                            <p>11 97139-8041</p>
                         </div>
                     </div>
                     
@@ -1069,7 +992,7 @@
                         <span class="icon">📧</span>
                         <div>
                             <p><strong>Email:</strong></p>
-                            <p>contato@igreja.com.br</p>
+                            <p>jdalgarve@outlook.com</p>
                         </div>
                     </div>
                     
@@ -1077,13 +1000,29 @@
                         <span class="icon">📍</span>
                         <div>
                             <p><strong>Endereço da Igreja:</strong></p>
-                            <p>Rua da Igreja, 123 - São Paulo/SP</p>
+                            <p>Rua Bianca Luz Brambilla N° 85 Vila São Judas Tadeu - Itaquaquecetuba/SP</p>
                         </div>
                     </div>
                     
                     <hr style="margin: 3rem 0; border: 1px solid var(--color-border);">
                     <div class="form-section">
                         <h2 style="text-align: center; color: var(--color-primary); margin-bottom: 1.5rem;">Envie sua Mensagem</h2>
+                        
+    <iframe
+      id="JotFormIFrame-252536903503656"
+      title="Clone of Ainda tem dúvidas referente o tema? "
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allow="geolocation; microphone; camera; fullscreen; payment"
+      src="https://form.jotform.com/252536903503656"
+      frameborder="0"
+      style="min-width:100%;max-width:100%;height:539px;border:none;"
+      scrolling="no"
+    >
+    </iframe>
+    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-252536903503656']", "https://form.jotform.com/")</script>
+    
                         
                         </div>
                 </div>
@@ -1099,10 +1038,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <span class="main-title">Acampamento</span>
+                    <span class="main-title"></span>
                     <span class="sub-title">Jardim Algarve</span>
                 </div>
-                <p>&copy; 2025 Igreja - Todos os direitos reservados</p>
+                <p>&copy; 2025 - Todos os direitos reservados</p>
             </div>
         </div>
     </footer>
