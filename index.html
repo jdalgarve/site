@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acampamento Jardim Algarve</title>
+    <meta name="description" content="Acampamento Jardim Algarve - Um evento de fé, comunhão e renovação espiritual em meio à natureza. Confira informações, regras, galeria e faça sua inscrição.">
+    <meta name="keywords" content="acampamento, jardim algarve, evento cristão, inscrição, fé, comunhão, natureza, Suzano, igreja, jovens, retiro">
+    <title>Acampamento - Jardim Algarve</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" as="style">
@@ -32,7 +34,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--color-dark-text);
+            color: #232323;
             overflow-x: hidden;
             background-color: var(--color-light-bg);
         }
@@ -64,22 +66,55 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            line-height: 1.2;
+            line-height: 1.1;
             color: var(--color-white);
+            margin-bottom: 0.2rem;
+            position: relative;
+            overflow: visible;
         }
-        
         .logo h1 .main-title {
-            font-size: 2.2rem;
-            font-weight: 700;
+            font-size: 2.7rem;
+            font-weight: 800;
             font-family: 'Poppins', sans-serif;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #6cbe6c 20%, #fff 60%, #e74c3c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-shadow: 2px 4px 16px rgba(0,0,0,0.18);
+            margin-bottom: 0.2rem;
+            animation: fadeInDown 1s cubic-bezier(.4,2,.3,1);
         }
-        
+        .logo h1 .decor-line {
+            width: 48px;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #6cbe6c 0%, #e74c3c 100%);
+            margin: 0.2rem 0 0.3rem 0;
+            opacity: 0.85;
+            animation: fadeIn 1.2s 0.2s backwards;
+        }
         .logo h1 .sub-title {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 5px;
+            color: #e0ffe0;
+            letter-spacing: 1.5px;
+            margin-top: 0.1rem;
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.13);
+            animation: fadeInUp 1.1s cubic-bezier(.4,2,.3,1);
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         nav ul {
@@ -778,6 +813,8 @@
         .contact-container iframe {
             width: 100%;
             max-width: 100%;
+            min-width: 0;
+            display: block;
         }
 
         .back-button {
@@ -920,6 +957,18 @@
             margin-bottom: 0.5rem;
             opacity: 0.9;
         }
+
+        .footer-autor {
+            position: absolute;
+            right: 0.5rem;
+            bottom: 0.5rem;
+            color: var(--color-white);
+            opacity: 0.7;
+            font-size: 0.75rem;
+            text-align: right;
+            line-height: 1.1;
+            white-space: pre-line;
+        }
         
         .popup {
             position: fixed;
@@ -1020,7 +1069,7 @@
             margin-bottom: 0.5rem;
         }
 
-        @media (max-width: 768px) {
+    @media (max-width: 768px) {
             .menu-toggle {
                 display: none;
             }
@@ -1074,7 +1123,20 @@
             
             .form-container, .contact-container {
                 padding: 1.5rem;
-                max-width: 100%; /* Permite que ocupe a largura total */
+                max-width: 100%;
+            }
+            .form-container iframe,
+            .contact-container iframe {
+                width: 100vw !important;
+                min-width: 0 !important;
+                max-width: 100vw !important;
+                left: 50%;
+                right: 50%;
+                margin-left: -50vw;
+                margin-right: -50vw;
+                position: relative;
+                box-sizing: border-box;
+                display: block;
             }
 
             .form-row {
@@ -1104,13 +1166,14 @@
         }
     </style>
 </head>
-<body>
-    <header>
+    <body>
+    <header role="banner">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
                     <h1>
                         <span class="main-title">ACAMPAMENTO</span>
+                        <span class="decor-line"></span>
                         <span class="sub-title">JARDIM ALGARVE</span>
                     </h1>
                 </div>
@@ -1129,9 +1192,9 @@
         </div>
     </header>
 
-    <main>
+    <main role="main">
         <div id="homePage" class="page active">
-            <section id="home" class="hero">
+            <section id="home" class="hero" aria-label="Destaque">
                 <div class="hero-content">
                     <h1>Venha Viver um Acampamento Inesquecível</h1>
                     <p>Uma experiência de fé, comunhão e renovação espiritual em meio à natureza exuberante.</p>
@@ -1139,7 +1202,7 @@
                 </div>
             </section>
 
-            <section id="info" class="event-info">
+            <section id="info" class="event-info" aria-label="Informações do Evento">
                 <div class="container">
                     <div class="section-header">
                         <h2 class="section-title">Informações do Evento</h2>
@@ -1148,31 +1211,30 @@
                     
                     <div class="info-grid">
                         <div class="info-card">
-                            <span class="card-icon"><i class="fas fa-calendar-alt"></i></span>
+                            <span class="card-icon" aria-hidden="true"><i class="fas fa-calendar-alt"></i></span>
                             <h3>Data e Horários</h3>
                             <p><span class="highlight">02 a 04 de Janeiro de 2026</span><br>
                             Quinta-feira às 14h00 até<br>
                             Sábado às 16h00</p>
                         </div>
-                        
                         <div class="info-card">
-                            <span class="card-icon">🌍</span>
+                            <span class="card-icon" aria-hidden="true">🌍</span>
                             <h3>Localização</h3>
+                            <img src="https://via.placeholder.com/400x200/4285F4/ffffff?text=Mapa+do+Local" alt="Mapa ilustrativo do local do acampamento" style="width:100%;max-width:400px;border-radius:10px;margin:1rem 0;" loading="lazy">
                             <p><span class="highlight">Sítio: Exército da Salvação - Centro de Conferências e acampamento</span><br>
                             Av. Manoel Casanova, 1083 - Parque Santa Rosa<br>
                             Suzano - SP, 08664-000</p>
                             <div class="location-buttons">
-                                <a href="https://waze.com/ul?q=Av.%20Manoel%20Casanova,%201083%20-%20Parque%20Santa%20Rosa,%20Suzano%20-%20SP" class="location-button waze-button" target="_blank">
-                                    <i class="fab fa-waze"></i> Ir para o Waze
+                                <a href="https://waze.com/ul?q=Av.%20Manoel%20Casanova,%201083%20-%20Parque%20Santa%20Rosa,%20Suzano%20-%20SP" class="location-button waze-button" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-waze" aria-hidden="true"></i> Ir para o Waze
                                 </a>
-                                <a href="https://www.google.com/maps/place/Av.+Manoel+Casanova,+1083+-+Parque+Santa+Rosa,+Suzano+-+SP,+08664-000" class="location-button maps-button" target="_blank">
-                                    <i class="fas fa-map-marked-alt"></i> Ir para o Google Maps
+                                <a href="https://www.google.com/maps/place/Av.+Manoel+Casanova,+1083+-+Parque+Santa+Rosa,+Suzano+-+SP,+08664-000" class="location-button maps-button" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-map-marked-alt" aria-hidden="true"></i> Ir para o Google Maps
                                 </a>
                             </div>
                         </div>
-                        
                         <div class="info-card">
-                            <span class="card-icon">💰</span>
+                            <span class="card-icon" aria-hidden="true">💰</span>
                             <h3>Investimento</h3>
                             <p><span class="highlight">R$ 200,00</span> por pessoa<br>
                             Inclui hospedagem, refeições e atividades.</p>
@@ -1180,7 +1242,7 @@
                     </div>
 
                     <div class="what-to-bring-container info-card">
-                        <span class="card-icon">🎒</span>
+                        <span class="card-icon" aria-hidden="true">🎒</span>
                         <h3>O que levar</h3>
                         <ul class="what-to-bring-list">
                             <li>Bíblia</li>
@@ -1380,24 +1442,28 @@
                     <div class="slider-container">
                         <div class="slider-content">
                             <div class="slider-item slide1" aria-label="Foto de momentos de adoração. Cultos inspiradores e louvor em comunhão.">
+                                <img src="https://via.placeholder.com/900x600/1a1a1a/f0f0f0?text=Momentos+de+Adora%C3%A7%C3%A3o" alt="Momento de adoração no acampamento" loading="lazy">
                                 <div class="slide-text">
                                     <h2>Momentos de Adoração</h2>
                                     <p>Cultos inspiradores e louvor em comunhão.</p>
                                 </div>
                             </div>
                             <div class="slider-item slide2" aria-label="Foto de conexão com a natureza. Descubra a beleza da criação de Deus nas trilhas do sítio.">
+                                <img src="https://via.placeholder.com/900x600/333333/f0f0f0?text=Conex%C3%A3o+com+a+Natureza" alt="Conexão com a natureza no acampamento" loading="lazy">
                                 <div class="slide-text">
                                     <h2>Conexão com a Natureza</h2>
                                     <p>Descubra a beleza da criação de Deus nas trilhas do sítio.</p>
                                 </div>
                             </div>
                             <div class="slider-item slide3" aria-label="Foto de novas amizades. Crie laços e compartilhe experiências com sua família e novos amigos.">
+                                <img src="https://via.placeholder.com/900x600/666666/ffffff?text=Amizades+e+Comunh%C3%A3o" alt="Amizades e comunhão entre participantes" loading="lazy">
                                 <div class="slide-text">
                                     <h2>Novas Amizades</h2>
                                     <p>Crie laços e compartilhe experiências com sua família e novos amigos.</p>
                                 </div>
                             </div>
                             <div class="slider-item slide4" aria-label="Foto de fogueira e histórias. Noite de louvor, testemunhos e muita alegria ao redor da fogueira.">
+                                <img src="https://via.placeholder.com/900x600/1a1a1a/f0f0f0?text=Fogueira+e+Hist%C3%B3rias" alt="Fogueira e histórias compartilhadas" loading="lazy">
                                 <div class="slide-text">
                                     <h2>Fogueira e Histórias</h2>
                                     <p>Noite de louvor, testemunhos e muita alegria ao redor da fogueira.</p>
@@ -1482,6 +1548,9 @@
                     <hr style="margin: 3rem 0; border: 1px solid var(--color-border);">
                     <div class="form-section">
                         <h2 style="text-align: center; color: var(--color-primary); margin-bottom: 1.5rem;">Envie sua Mensagem</h2>
+                        <div style="text-align:center;">
+                            <!-- Botão WhatsApp removido conforme solicitado -->
+                        </div>
                         
     <iframe
       id="JotFormIFrame-252536903503656"
@@ -1505,11 +1574,45 @@
         </d>
     </main>
 
-    <div id="pixPopup" class="popup">Chave PIX copiada!</div>
+    <div id="pixPopup" class="popup" role="status" aria-live="polite">Chave PIX copiada!</div>
 
     <button onclick="scrollToTop()" id="scrollToTopBtn" aria-label="Subir ao topo"><i class="fas fa-arrow-up"></i></button>
 
-    <footer>
+    <footer style="position: relative;" role="contentinfo">
+    <style>
+    /* Animação suave nos cards */
+    .info-card, .rules-card, .what-to-bring-container, .pix-info-card {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.7s, transform 0.7s;
+    }
+    .info-card.visible, .rules-card.visible, .what-to-bring-container.visible, .pix-info-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    </style>
+    <script>
+    // Lazy loading para imagens da galeria
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.slider-item img').forEach(img => {
+            img.setAttribute('loading', 'lazy');
+        });
+    });
+
+    // Animação suave nos cards ao rolar
+    function revealOnScroll() {
+        const elements = document.querySelectorAll('.info-card, .rules-card, .what-to-bring-container, .pix-info-card');
+        const windowHeight = window.innerHeight;
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < windowHeight - 60) {
+                el.classList.add('visible');
+            }
+        });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('DOMContentLoaded', revealOnScroll);
+    </script>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
@@ -1518,6 +1621,7 @@
                 </div>
                 <p>© 2025 - Todos os direitos reservados</p>
             </div>
+            <span class="footer-autor">Criado por:Alex Amaral</span>
         </div>
     </footer>
 
