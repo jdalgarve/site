@@ -20,6 +20,7 @@
             --color-gray-text: #666666;
             --color-border: #cccccc;
             --color-green-accent: #6cbe6c;
+            --color-red-accent: #e74c3c;
         }
 
         * {
@@ -241,38 +242,403 @@
             font-weight: 600;
             color: var(--color-secondary);
         }
+        
+        .what-to-bring-container {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-        .rules-list {
-            max-width: 800px;
+        .what-to-bring-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .what-to-bring-container .card-icon {
+            text-align: center;
+            display: block;
+        }
+        
+        .what-to-bring-container h3 {
+            text-align: center;
+        }
+
+        .what-to-bring-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1rem;
+            color: var(--color-dark-text);
+        }
+        
+        .what-to-bring-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (min-width: 992px) {
+            .what-to-bring-list {
+                columns: 2;
+                -webkit-columns: 2;
+                -moz-columns: 2;
+                column-gap: 3rem;
+            }
+        }
+        
+        .rules-section {
+            padding-bottom: 2rem;
+        }
+
+        .rules-container {
+            max-width: 900px;
             margin: 0 auto;
-            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .rules-card {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .rules-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .rules-card h3 {
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .rules-card h3::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: var(--color-green-accent);
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .rules-card ul {
+            list-style-type: none;
             padding-left: 0;
         }
 
-        .rules-list li {
-            background: var(--color-white);
-            padding: 1.5rem 2rem;
-            margin-bottom: 1rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        .rules-card ul li {
             position: relative;
-            padding-left: 3.5rem;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: var(--color-dark-text);
         }
 
-        .rules-list li::before {
-            content: "✓";
-            font-size: 1.5rem;
+        .rules-card ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .rules-card ul li::before {
+            content: "•";
+            color: var(--color-green-accent);
             font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
+        .rules-card .list-title {
+            font-weight: 600;
+            color: var(--color-secondary);
+            margin-top: 1rem;
+        }
+
+        .rules-card .sub-list {
+            list-style-type: none;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .rules-card .sub-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .rules-card .sub-list li::before {
+            content: "→";
+            color: var(--color-accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
+        .mandamentos-section {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 5rem 0;
+            text-align: center;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mandamentos-section .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .mandamentos-section .section-title {
+            color: var(--color-white);
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .mandamentos-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+        }
+        
+        .mandamentos-list {
+            max-width: 700px;
+            margin: 0 auto;
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .mandamentos-list li {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 5rem;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            color: var(--color-white);
+            font-size: 1.1rem;
+        }
+        
+        .mandamentos-list li:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mandamentos-list li::before {
+            font-family: "Font Awesome 6 Free";
+            content: "\f058"; 
+            font-weight: 900;
             color: var(--color-green-accent);
             position: absolute;
-            left: 1.5rem;
+            left: 2.2rem;
             top: 50%;
             transform: translateY(-50%);
+            font-size: 1.8rem;
         }
 
-        .rules-list li strong {
-            color: var(--color-primary);
+        .info-card .list-title {
             font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card ul {
+            text-align: left;
+            padding-left: 20px;
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--color-dark-text);
+        }
+
+        .info-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Estilos do novo bloco de PIX */
+        .pix-info-card {
+            margin: 3rem auto 0;
+            max-width: 450px; /* Deixando o card menor */
+        }
+        
+        .pix-info-card h3 {
+            text-align: center;
+        }
+
+        .pix-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pix-key-group {
+            margin-bottom: 1rem;
+        }
+        
+        .pix-key-group .key-icon {
+            color: var(--color-green-accent);
+            margin-right: 5px;
+        }
+
+        .pix-key {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--color-secondary);
+        }
+        
+        .copy-button {
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .copy-button:hover {
+            background: var(--color-secondary);
+        }
+
+        .copy-button.copied {
+            background: var(--color-green-accent);
+        }
+        
+        .pix-value-container {
+            margin: 1.5rem 0;
+        }
+
+        .pix-value-text {
+            color: var(--color-gray-text);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .pix-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--color-green-accent);
+            margin-top: 5px;
+            display: block;
+        }
+        
+        .pix-instructions {
+            margin-top: 1rem;
+            text-align: left;
+        }
+        
+        .pix-instructions h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .pix-instructions ol {
+            padding-left: 20px;
+            list-style-type: decimal;
+        }
+        
+        .pix-instructions ol li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .payment-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .payment-button {
+            display: block;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .payment-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .payment-button.online-pay {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        .payment-button.online-pay:hover {
+            background-color: var(--color-secondary);
+        }
+        
+        /* Estilos dos botões do Waze e Maps */
+        .location-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .location-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--color-white);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .location-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .waze-button {
+            background-color: #33ccff;
+        }
+
+        .waze-button:hover {
+            background-color: #1aa0d3;
+        }
+        
+        .maps-button {
+            background-color: #4285F4;
+        }
+
+        .maps-button:hover {
+            background-color: #3b78e7;
         }
         
         .gallery-slider {
@@ -387,73 +753,6 @@
         .slide2 { background-image: url('https://via.placeholder.com/900x600/333333/f0f0f0?text=Conex%C3%A3o+com+a+Natureza'); }
         .slide3 { background-image: url('https://via.placeholder.com/900x600/666666/ffffff?text=Amizades+e+Comunh%C3%A3o'); }
         .slide4 { background-image: url('https://via.placeholder.com/900x600/1a1a1a/f0f0f0?text=Fogueira+e+Hist%C3%B3rias'); }
-
-        .pix-section {
-            background: var(--color-white);
-            padding: 3rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-        }
-
-        .pix-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .qr-code {
-            width: 180px;
-            height: 180px;
-            background-color: var(--color-light-bg);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--color-primary);
-        }
-
-        .pix-info h3 {
-            color: var(--color-secondary);
-            margin-bottom: 1rem;
-            font-size: 1.6rem;
-        }
-
-        .pix-key {
-            background: var(--color-light-bg);
-            padding: 1rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            font-family: monospace;
-            font-size: 1.1rem;
-            word-break: break-all;
-            color: var(--color-dark-text);
-        }
-
-        .copy-button {
-            background: var(--color-accent);
-            color: var(--color-white);
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .copy-button:hover {
-            background: #555555;
-            transform: translateY(-2px);
-        }
-
-        .copy-button.copied {
-            background: var(--color-green-accent);
-            color: var(--color-white);
-        }
 
         .page {
             min-height: 100vh;
@@ -662,28 +961,57 @@
         }
         
         #scrollToTopBtn {
-            display: none; /* Escondido por padrão */
+            display: none; 
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 99;
             border: none;
             outline: none;
-            background-color: var(--color-primary); /* Cor escura do site */
+            background-color: var(--color-primary); 
             color: var(--color-white);
             cursor: pointer;
-            padding: 15px 18px; /* Ajuste para o ícone */
+            padding: 15px 18px; 
             border-radius: 50%;
-            font-size: 1.5rem; /* Tamanho do ícone */
+            font-size: 1.5rem; 
             opacity: 0.9;
             transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         #scrollToTopBtn:hover {
-            background-color: var(--color-secondary); /* Um pouco mais claro no hover */
+            background-color: var(--color-secondary); 
             opacity: 1;
-            transform: translateY(-3px); /* Leve efeito de subir */
+            transform: translateY(-3px); 
+        }
+
+        .rules-card ul .list-title {
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+        
+        .rules-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: var(--color-dark-text);
+        }
+
+        .info-card .list-title {
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card ul {
+            text-align: left;
+            padding-left: 20px;
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--color-dark-text);
+        }
+
+        .info-card ul li {
+            margin-bottom: 0.5rem;
         }
 
         @media (max-width: 768px) {
@@ -742,11 +1070,6 @@
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
-
-            .pix-container {
-                flex-direction: column;
-                gap: 2rem;
-            }
             
             .slider-arrow {
                 display: none;
@@ -754,6 +1077,18 @@
             
             .slider-item {
                 height: 300px;
+            }
+            
+            .mandamentos-list li::before {
+                left: 1rem;
+            }
+            
+            .mandamentos-list li {
+                padding-left: 3.5rem;
+            }
+
+            .pix-info-card {
+                max-width: 100%;
             }
         }
     </style>
@@ -812,34 +1147,80 @@
                         <div class="info-card">
                             <span class="card-icon">🌍</span>
                             <h3>Localização</h3>
-                            <p><span class="highlight">Sítio Jardim Algarve</span><br>
-                            Estrada Rural do Sítio, 123<br>
-                            São Paulo/SP</p>
+                            <p><span class="highlight">Sítio: Exército da Salvação - Centro de Conferências e acampamento</span><br>
+                            Av. Manoel Casanova, 1083 - Parque Santa Rosa<br>
+                            Suzano - SP, 08664-000</p>
+                            <div class="location-buttons">
+                                <a href="https://waze.com/ul?q=Av.%20Manoel%20Casanova,%201083%20-%20Parque%20Santa%20Rosa,%20Suzano%20-%20SP" class="location-button waze-button" target="_blank">
+                                    <i class="fab fa-waze"></i> Ir para o Waze
+                                </a>
+                                <a href="https://www.google.com/maps/place/Av.+Manoel+Casanova,+1083+-+Parque+Santa+Rosa,+Suzano+-+SP,+08664-000" class="location-button maps-button" target="_blank">
+                                    <i class="fas fa-map-marked-alt"></i> Ir para o Google Maps
+                                </a>
+                            </div>
                         </div>
                         
                         <div class="info-card">
                             <span class="card-icon">💰</span>
                             <h3>Investimento</h3>
                             <p><span class="highlight">R$ 200,00</span> por pessoa<br>
-                            Inclui hospedagem, refeições e atividades.
+                            Inclui hospedagem, refeições e atividades.</p>
                         </div>
-                        
-                        <div class="info-card">
-                            <span class="card-icon">🎯</span>
-                            <h3>Atividades</h3>
-                            <p>Cultos, trilhas, piscinas, recreação e muito mais!</p>
-                        </div>
-                        
-                        <div class="info-card">
+                    </div>
+
+                    <div class="what-to-bring-container info-card">
+                        <span class="card-icon">🎒</span>
+                        <h3>O que levar</h3>
+                        <ul class="what-to-bring-list">
+                            <li>Bíblia</li>
+                            <li>Produtos de higiene pessoal (sabonete, shampoo, escova e pasta de dente, desodorante, protetor solar, repelente, pente, escova de cabelo, secador de cabelo, chapinha)</li>
+                            <li>Toalhas para banho e piscina</li>
+                            <li>Roupas esportivas de calor e frio, traje de banho de piscina (conforme indicado nas regras)</li>
+                            <li>Roupa para jantar temático: UMA NOITE NO HAVAÍ</li>
+                            <li>Roupa para o culto do domingo a noite, pois iremos direto para igreja para o encerramento</li>
+                            <li>Roupa de cama (lençol e/ou cobertor, travesseiro)</li>
+                            <li>Remédios (em casos de tratamentos e/ou alergias)</li>
+                            <li>Sacos plásticos para roupas sujas e molhadas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card pix-info-card">
+                        <div class="pix-content">
                             <span class="card-icon">💳</span>
-                            <h3>Pagamento</h3>
-                            <p>PIX, Cartão ou Dinheiro</p>
+                            <h3>Pagamento e Inscrição</h3>
+                            <p style="margin-bottom: 2rem;">Para garantir sua vaga, escolha uma das opções abaixo e faça sua inscrição.</p>
                         </div>
                         
-                        <div class="info-card">
-                            <span class="card-icon">🎒</span>
-                            <h3>O que levar</h3>
-                            <p>Roupas de frio, bíblia, itens de higiene e repelente.</p>
+                        <hr style="margin-top: 1rem; border: 1px solid var(--color-border);">
+                        
+                        <div class="pix-instructions">
+                            <h4 style="text-align: center;">Pagamento via PIX</h4>
+                            <p style="text-align: center; margin-bottom: 1rem; font-size: 0.95rem; color: var(--color-gray-text);">Copie a chave, realize o pagamento e envie o comprovante.</p>
+
+                            <p style="font-weight: 600;">Chave PIX (Telefone)</p>
+                            <div class="pix-key-container">
+                                <span class="pix-key" id="pixKey"><i class="fas fa-key key-icon"></i> 43377700382</span>
+                                <button class="copy-button" onclick="copyPixKey()" aria-label="Copiar chave PIX">
+                                    <span id="copyButtonText">Copiar Chave PIX</span>
+                                </button>
+                            </div>
+                            
+                            <p>Beneficiário: <strong>Paulo Fernandes da Costa</strong></p>
+                            <p>Valor: <span class="pix-value">R$ 200,00</span></p>
+
+                            <ol style="margin-top: 1.5rem;">
+                                <li>Faça o pagamento no seu aplicativo de banco.</li>
+                                <li>Envie o comprovante via WhatsApp: <strong>11 97139-8041</strong>.</li>
+                                <li>Preencha o Formulário de Inscrição presente neste site com suas informações.</li>
+                            </ol>
+                        </div>
+                        
+                        <hr style="margin: 2rem 0; border: 1px solid var(--color-border);">
+                        
+                        <div class="payment-buttons">
+                            <a href="https://exemplo.com/seu-link-de-pagamento-aqui" class="payment-button online-pay" target="_blank">
+                                <i class="fas fa-credit-card" style="margin-right: 8px;"></i>Pagar com Cartão Online
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -851,25 +1232,129 @@
                         <h2 class="section-title">Regras do Acampamento</h2>
                         <p class="section-subtitle">Para garantir que todos tenham uma experiência segura e abençoada.</p>
                     </div>
-                    <ul class="rules-list">
-                        <li>
-                            <strong>Horários:</strong> Respeite os horários de início e término das atividades e refeições.
-                        </li>
-                        <li>
-                            <strong>Alojamentos:</strong> Mantenha a organização e a limpeza em seu alojamento e nas áreas comuns.
-                        </li>
-                        <li>
-                            <strong>Respeito:</strong> Trate todos com respeito e amor, praticando a comunhão e a humildade.
-                        </li>
-                        <li>
-                            <strong>Preservação:</strong> Cuide da natureza e das instalações do sítio. Não jogue lixo no chão.
-                        </li>
-                        <li>
-                            <strong>Segurança:</strong> Não se afaste do grupo ou das áreas designadas sem autorização.
-                        </li>
-                        <li>
-                            <strong>Vestimenta:</strong> Use roupas adequadas para o ambiente do acampamento e para as atividades propostas.
-                        </li>
+                    <div class="rules-container">
+                        <div class="rules-card">
+                            <h3>VESTUÁRIOS</h3>
+                            <p>Pedimos que observem rigorosamente o nosso padrão de trajes adequados para cada momento e especialmente os trajes de banho, para que não tenhamos nenhum contratempo desagradável.</p>
+                            <h4 class="list-title">BANHO DE PISCINA</h4>
+                            <ul class="sub-list">
+                                <p class="list-title">MENINAS</p>
+                                <li>Maiô com short comprido e/ou camiseta e short comprido (sem ser da cor branca)</li>
+                                <li>Toalha banho;</li>
+                                <li>PROIBIDO USO DE BIQUINIS.</li>
+                            </ul>
+                            <ul class="sub-list">
+                                <p class="list-title">MENINOS</p>
+                                <li>Bermuda ou calções (sem ser da cor branca);</li>
+                                <li>Toalha banho;</li>
+                                <li>PROIBIDO USO DE SUNGAS.</li>
+                            </ul>
+                            <h4 class="list-title">TRAJES EM GERAL</h4>
+                            <ul class="sub-list">
+                                <p class="list-title">MENINAS</p>
+                                <li>Não levar blusas decotadas, minissaia, mini short, mini vestido ou roupas transparentes.</li>
+                            </ul>
+                            <ul class="sub-list">
+                                <p class="list-title">MENINOS</p>
+                                <li>Não levar shorts pequenos, assim como bermudas transparentes (nylon branco);</li>
+                            </ul>
+                            <ul class="sub-list">
+                                <li><strong>Observação 1:</strong> Todos devem levar roupa para o culto do domingo a noite para o encerramento na nossa igreja.</li>
+                                <li><strong>Observação 2:</strong> Levar roupa para jantar temático.</li>
+                            </ul>
+                        </div>
+                        <div class="rules-card">
+                            <h3>ALOJAMENTOS</h3>
+                            <p>Cada acampante receberá na entrada a localização do seu alojamento devendo manter a organização dos quartos, bem como:</p>
+                            <ul>
+                                <li>Limpeza;</li>
+                                <li>Camas arrumadas;</li>
+                                <li>Banheiros;</li>
+                                <li>Roupas espalhadas e/ou molhadas;</li>
+                                <li>Peça de roupa intima;</li>
+                                <li>Não entrar molhado (a);</li>
+                                <li>Manter o ambiente limpo e saudável;</li>
+                                <li>Achados e perdidos falar com a liderança.</li>
+                            </ul>
+                            <p>É proibido meninos entrarem no alojamento das meninas e vice-versa;</p>
+                        </div>
+                        <div class="rules-card">
+                            <h3>REFEITÓRIO</h3>
+                            <ul>
+                                <li>Respeite o próximo, prioridades para as irmãs de idade e/ou com crianças;</li>
+                                <li>Não entrar sem camisa;</li>
+                                <li>Não entrar molhado (a);</li>
+                                <li>Não entrar com roupa de banho;</li>
+                                <li>Respeitar horário de café/almoço/jantar;</li>
+                                <li>Não ter brincadeiras no local;</li>
+                                <li>Não furar filas;</li>
+                                <li>Ter educação pelo próximo;</li>
+                                <li>Aguardar a sua vez sem bagunça;</li>
+                            </ul>
+                        </div>
+                        <div class="rules-card">
+                            <h3>HORÁRIO DESCANSO</h3>
+                            <ul>
+                                <li>Não serão permitidas brincadeiras após horário estabelecido para dormir;</li>
+                                <li>Respeitar o sono dos demais;</li>
+                                <li>Não ter conversas durante a noite;</li>
+                                <li>Silêncio após o horário estabelecido;</li>
+                            </ul>
+                        </div>
+                        <div class="rules-card">
+                            <h3>CULTOS</h3>
+                            <ul>
+                                <li>Será de extrema importância a participação de todos os acampantes em TODAS reuniões;</li>
+                                <li>Compareça as reuniões de oração por esse evento conforme tópico 1 e programação;</li>
+                                <li>Concentre-se no recado que Deus tem para sua vida durante esses dias!</li>
+                            </ul>
+                        </div>
+                        <div class="rules-card">
+                            <h3>REGRAS GERAIS E DICAS</h3>
+                            <ul>
+                                <li>Ninguém deve ultrapassar os limites estabelecidos para o acampamento sem autorização;</li>
+                                <li>Cuidar dos objetos pessoais e deixar suas coisas em ordem;</li>
+                                <li>Durante a estadia, dar o melhor de si e estimular o melhor dos outros;</li>
+                                <li>Evitar todo espírito de competição valorizando a participação em conjunto;</li>
+                                <li>Respeitar a privacidade dos outros;</li>
+                                <li>Não permitir em qualquer situação o surgimento de discussões e brigas;</li>
+                                <li>Estão proibidas brincadeiras de mau gosto (BULLYNG!) com qualquer pessoa que não esteja disposta a brincar, respeite o seu amigo.</li>
+                                <li>Respeitar os responsáveis pela ordem e seguir suas orientações;</li>
+                                <li>Zelar pela limpeza e ordem do acampamento com o objetivo de deixá-lo melhor do que foi recebido;</li>
+                                <li>Conviva com responsabilidade, alegria, disposição, otimismo, compreensão, cooperação e amor, aproveitando ao máximo as atividades;</li>
+                                <li>Observe os horários, eles devem ser cumpridos (devocional, cultos e horários de refeições);</li>
+                                <li>Colabore em tudo o que for preciso, afinal você faz parte do grupo;</li>
+                                <li>Aproveite este tempo para se aproximar de Deus e das pessoas;</li>
+                                <li>Não será permitido levar qualquer tipo de bomba, morteiro ou derivados;</li>
+                                <li>Será terminantemente proibido “FICAR” no acampamento; casais de namorados não devem se afastar do grupo;</li>
+                                <li>Qualquer problema ou dificuldade comunique a liderança;</li>
+                                <li>Proibido jogar os colegas/amigos na piscina para que não aconteça nenhum tipo de acidente;</li>
+                                <li>Crianças pequenas somente poderão entrar nas piscinas com a presença dos pais ou responsáveis;</li>
+                            </ul>
+                            <p style="font-size: 0.9rem; margin-top: 1.5rem; color: #888;">
+                                <strong>Obs.:</strong> Os casos de omissões deste manual de informações serão resolvidos pelos responsáveis do acampamento. As regras ou mandamentos que forem quebrados terão suas consequências pessoais e intransferíveis, sendo a punição máxima: voltar para casa, sem devolução do dinheiro.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mandamentos-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">OS 10 MANDAMENTOS DO ACAMPANTE</h2>
+                    </div>
+                    <ul class="mandamentos-list">
+                        <li>Não atracarás o seu próximo (carinhosa ou violentamente);</li>
+                        <li>Não murmurarás;</li>
+                        <li>Honrarás os seus líderes sobre todas as coisas para que sua noite de paz se prolongue;</li>
+                        <li>Não mentirás;</li>
+                        <li>Não agirás de má fé com seu próximo;</li>
+                        <li>Seus líderes tem sempre a razão;</li>
+                        <li>Pensarás primeiro no seu próximo (principalmente nos momentos das refeições e do banho);</li>
+                        <li>Estarás sempre disposto;</li>
+                        <li>Cumprirás todas as tarefas sem reclamar;</li>
+                        <li>Desfrutarás deste acampamento como se fossem os últimos dias da sua vida.</li>
                     </ul>
                 </div>
             </section>
@@ -909,50 +1394,14 @@
                             </div>
                         </div>
                         
-                        <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)" aria-label="Slide anterior">&#10094;</button>
-                        <button class="slider-arrow arrow-next" onclick="changeSlide(1)" aria-label="Próximo slide">&#10095;</button>
+                        <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)" aria-label="Slide anterior">❮</button>
+                        <button class="slider-arrow arrow-next" onclick="changeSlide(1)" aria-label="Próximo slide">❯</button>
                         
                         <div class="slider-nav">
                             <div class="nav-dot active" onclick="goToSlide(0)"></div>
                             <div class="nav-dot" onclick="goToSlide(1)"></div>
                             <div class="nav-dot" onclick="goToSlide(2)"></div>
                             <div class="nav-dot" onclick="goToSlide(3)"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="pix-info-section">
-                <div class="container">
-                    <div class="pix-section">
-                        <h2 style="margin-bottom: 2rem; color: var(--color-primary);">💳 Pagamento via PIX</h2>
-                        <div class="pix-container">
-                            <div class="qr-code">
-                                <div style="text-align: center;">
-                                    <div style="font-size: 4rem; margin-bottom: 10px;">📱</div>
-                                    <div style="font-size: 0.9rem;">QR Code PIX</div>
-                                </div>
-                            </div>
-                            <div class="pix-info">
-                                <h3>🔑 Chave PIX</h3>
-                                <div class="pix-key" id="pixKey">43377700382</div>
-                                <div class="pix-actions">
-                                    <button class="copy-button" onclick="copyPixKey()">
-                                        <span id="copyButtonText">📋 Copiar Chave PIX</span>
-                                    </button>
-                                </div>
-                                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8; color: var(--color-gray-text);">
-                                    <strong>Beneficiário:</strong> Paulo Fernandes da Costa<br>
-                                    <strong>Valor:</strong> R$ 200,00 por Pessoa
-                                </p>
-                            </div>
-                        </div>
-                        <div style="margin-top: 2rem; padding: 1rem; background: var(--color-light-bg); border-radius: 10px; color: var(--color-dark-text);">
-                            <p><strong>📌 Instruções:</strong></p>
-                            <p>1. Escaneie o QR Code ou copie a chave PIX</p>
-                            <p>2. Faça o pagamento no seu banco</p>
-                            <p>3. Envie o comprovante via WhatsApp: 11 97139-8041</p>
-                            <p>4. Preencha o Formulário de Inscrição presente neste site com suas informações</p>
                         </div>
                     </div>
                 </div>
@@ -1020,14 +1469,14 @@
       scrolling="no"
     >
     </iframe>
-    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+    <script src='https://cdn.jotform.com/s/umd/latest/for-form-embed-handler.js'></script>
     <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-252536903503656']", "https://form.jotform.com/")</script>
     
                         
                         </div>
                 </div>
             </div>
-        </div>
+        </d>
     </main>
 
     <div id="pixPopup" class="popup">Chave PIX copiada!</div>
@@ -1041,7 +1490,7 @@
                     <span class="main-title"></span>
                     <span class="sub-title">Jardim Algarve</span>
                 </div>
-                <p>&copy; 2025 - Todos os direitos reservados</p>
+                <p>© 2025 - Todos os direitos reservados</p>
             </div>
         </div>
     </footer>
@@ -1098,8 +1547,7 @@
             const form = event.target;
             const feedbackDiv = document.getElementById('form-feedback');
 
-            // Simula o envio
-            const isSuccess = true; // Altere para false para simular erro
+            const isSuccess = true; 
 
             if (isSuccess) {
                 feedbackDiv.textContent = '✅ Inscrição enviada com sucesso! Aguarde a confirmação.';
@@ -1114,19 +1562,20 @@
         }
         
         function copyPixKey() {
-            const pixKey = document.getElementById('pixKey').textContent;
-            const copyButton = document.getElementById('copyButtonText');
+            const pixKey = document.getElementById('pixKey').textContent.split(' ').slice(1).join('');
+            const copyButtonText = document.getElementById('copyButtonText');
+            const copyButton = document.querySelector('.copy-button');
             const pixPopup = document.getElementById('pixPopup');
-            
+
             navigator.clipboard.writeText(pixKey).then(() => {
-                copyButton.textContent = '✅ Chave Copiada!';
-                copyButton.parentElement.classList.add('copied');
+                copyButtonText.textContent = 'Chave Copiada!';
+                copyButton.classList.add('copied');
                 
                 pixPopup.classList.add('show');
                 
                 setTimeout(() => {
-                    copyButton.textContent = '📋 Copiar Chave PIX';
-                    copyButton.parentElement.classList.remove('copied');
+                    copyButtonText.textContent = 'Copiar Chave PIX';
+                    copyButton.classList.remove('copied');
                     pixPopup.classList.remove('show');
                 }, 2000);
             }).catch(err => {
@@ -1150,7 +1599,6 @@
             });
         });
 
-        // Lógica do botão de Subir ao Topo
         const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
         window.onscroll = function() {
