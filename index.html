@@ -81,7 +81,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-fill-color: transparent;
             text-shadow: 2px 4px 16px rgba(0,0,0,0.18);
             margin-bottom: 0.2rem;
             animation: fadeInDown 1s cubic-bezier(.4,2,.3,1);
@@ -815,6 +814,7 @@
             max-width: 100%;
             min-width: 0;
             display: block;
+            min-height: 600px;
         }
 
         .back-button {
@@ -1137,6 +1137,7 @@
                 position: relative;
                 box-sizing: border-box;
                 display: block;
+                min-height: 700px !important;
             }
 
             .form-row {
@@ -1449,42 +1450,23 @@
                         <h2 class="section-title" style="color: var(--color-white);">Galeria de Momentos</h2>
                         <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Confira um pouco da experiência que preparamos para você.</p>
                     </div>
-                    
                     <div class="slider-container">
                         <div class="slider-content">
-                            <div class="slider-item slide1" aria-label="Foto de momentos de adoração. Cultos inspiradores e louvor em comunhão.">
-                                <img src="https://via.placeholder.com/900x600/1a1a1a/f0f0f0?text=Momentos+de+Adora%C3%A7%C3%A3o" alt="Momento de adoração no acampamento" loading="lazy">
-                                <div class="slide-text">
-                                    <h2>Momentos de Adoração</h2>
-                                    <p>Cultos inspiradores e louvor em comunhão.</p>
-                                </div>
+                            <div class="slider-item" aria-label="Foto 1">
+                                <img src="videos/IMG-20250918-WA0016.jpg" alt="Momento 1" loading="lazy">
                             </div>
-                            <div class="slider-item slide2" aria-label="Foto de conexão com a natureza. Descubra a beleza da criação de Deus nas trilhas do sítio.">
-                                <img src="https://via.placeholder.com/900x600/333333/f0f0f0?text=Conex%C3%A3o+com+a+Natureza" alt="Conexão com a natureza no acampamento" loading="lazy">
-                                <div class="slide-text">
-                                    <h2>Conexão com a Natureza</h2>
-                                    <p>Descubra a beleza da criação de Deus nas trilhas do sítio.</p>
-                                </div>
+                            <div class="slider-item" aria-label="Foto 2">
+                                <img src="videos/IMG-20250918-WA0015.jpg" alt="Momento 2" loading="lazy">
                             </div>
-                            <div class="slider-item slide3" aria-label="Foto de novas amizades. Crie laços e compartilhe experiências com sua família e novos amigos.">
-                                <img src="https://via.placeholder.com/900x600/666666/ffffff?text=Amizades+e+Comunh%C3%A3o" alt="Amizades e comunhão entre participantes" loading="lazy">
-                                <div class="slide-text">
-                                    <h2>Novas Amizades</h2>
-                                    <p>Crie laços e compartilhe experiências com sua família e novos amigos.</p>
-                                </div>
+                            <div class="slider-item" aria-label="Foto 3">
+                                <img src="videos/IMG-20250918-WA0017.jpg" alt="Momento 3" loading="lazy">
                             </div>
-                            <div class="slider-item slide4" aria-label="Foto de fogueira e histórias. Noite de louvor, testemunhos e muita alegria ao redor da fogueira.">
-                                <img src="https://via.placeholder.com/900x600/1a1a1a/f0f0f0?text=Fogueira+e+Hist%C3%B3rias" alt="Fogueira e histórias compartilhadas" loading="lazy">
-                                <div class="slide-text">
-                                    <h2>Fogueira e Histórias</h2>
-                                    <p>Noite de louvor, testemunhos e muita alegria ao redor da fogueira.</p>
-                                </div>
+                            <div class="slider-item" aria-label="Foto 4">
+                                <img src="videos/IMG-20250918-WA0019.jpg" alt="Momento 4" loading="lazy">
                             </div>
                         </div>
-                        
                         <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)" aria-label="Slide anterior">❮</button>
                         <button class="slider-arrow arrow-next" onclick="changeSlide(1)" aria-label="Próximo slide">❯</button>
-                        
                         <div class="slider-nav">
                             <div class="nav-dot active" onclick="goToSlide(0)"></div>
                             <div class="nav-dot" onclick="goToSlide(1)"></div>
@@ -1500,9 +1482,6 @@
             <div class="container">
                 <div class="form-container">
                     <button class="back-button" onclick="showHome()">← Voltar ao Site</button>
-                    <h2 class="form-title">Formulário de Inscrição</h2>
-                    
-                    
     <iframe
       id="JotFormIFrame-252537249664668"
       title="Inscrição - Acampamento Algarve"
