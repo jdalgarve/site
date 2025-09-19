@@ -201,7 +201,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .media-container video.vertical-video {
+            aspect-ratio: 9/16;
+            object-fit: cover;
         }
 
         footer {
@@ -240,6 +246,25 @@
         }
         
         @media (max-width: 768px) {
+            /* Ajuste para vídeos no mobile */
+            .media-container video {
+                position: static;
+                width: 100vw;
+                max-width: 100%;
+                height: 220px;
+                min-height: 180px;
+                aspect-ratio: 16/9;
+                object-fit: cover;
+                border-radius: 12px;
+                background: #000;
+                display: block;
+                margin: 0 auto;
+            }
+            .media-container video.vertical-video {
+                aspect-ratio: 9/16;
+                height: 340px;
+                min-height: 260px;
+            }
             .header-content {
                 flex-direction: column;
                 align-items: center;
@@ -292,42 +317,339 @@
                 <h3 style="margin-top:2.5rem; margin-bottom:1rem; text-align:center; color:var(--color-green-accent); font-size:2rem; font-weight:700; letter-spacing:1px;">Momentos Registrados em Fotos</h3>
                 <p style="text-align:center; color:#666; margin-bottom:1.5rem; font-size:1.08rem;">Veja os melhores ângulos e detalhes do nosso espaço, natureza e estrutura. Cada imagem revela um pouco da atmosfera acolhedora do Jardim Algarve.</p>
                 <div class="photo-video-grid">
-                    <div class="media-container"><img src="videos/IMG-20250918-WA0010.jpg" alt="Foto 1 - Jardim Algarve"></div>
-                    <div class="media-container"><img src="videos/IMG-20250918-WA0011.jpg" alt="Foto 2 - Jardim Algarve"></div>
-                    <div class="media-container"><img src="videos/IMG-20250918-WA0012.jpg" alt="Foto 3 - Jardim Algarve"></div>
-                    <div class="media-container"><img src="videos/IMG-20250918-WA0013.jpg" alt="Foto 4 - Jardim Algarve"></div>
-                    <div class="media-container"><img src="videos/IMG-20250918-WA0014.jpg" alt="Foto 5 - Jardim Algarve"></div>
-                    <div class="media-container"><img src="videos/IMG-20250918-WA0015.jpg" alt="Foto 6 - Jardim Algarve"></div>
-                    <div class="media-container"><img src="videos/IMG-20250918-WA0016.jpg" alt="Foto 7 - Jardim Algarve"></div>
-                    <div class="media-container"><img src="videos/IMG-20250918-WA0017.jpg" alt="Foto 8 - Jardim Algarve"></div>
-                    <div class="media-container"><img src="videos/IMG-20250918-WA0018.jpg" alt="Foto 9 - Jardim Algarve"></div>
-                    <div class="media-container"><img src="videos/IMG-20250918-WA0019.jpg" alt="Foto 10 - Jardim Algarve"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0010.jpg" alt="Foto 1 - Jardim Algarve" class="gallery-img"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0011.jpg" alt="Foto 2 - Jardim Algarve" class="gallery-img"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0012.jpg" alt="Foto 3 - Jardim Algarve" class="gallery-img"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0013.jpg" alt="Foto 4 - Jardim Algarve" class="gallery-img"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0014.jpg" alt="Foto 5 - Jardim Algarve" class="gallery-img"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0015.jpg" alt="Foto 6 - Jardim Algarve" class="gallery-img"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0016.jpg" alt="Foto 7 - Jardim Algarve" class="gallery-img"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0017.jpg" alt="Foto 8 - Jardim Algarve" class="gallery-img"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0018.jpg" alt="Foto 9 - Jardim Algarve" class="gallery-img"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0019.jpg" alt="Foto 10 - Jardim Algarve" class="gallery-img"></div>
                 </div>
                 <!-- Seção de Vídeos -->
                 <h3 style="margin-top:2.5rem; margin-bottom:1rem; text-align:center; color:#e74c3c; font-size:2rem; font-weight:700; letter-spacing:1px;">Experiência em Vídeos</h3>
                 <p style="text-align:center; color:#666; margin-bottom:1.5rem; font-size:1.08rem;">Assista aos vídeos e sinta um pouco da energia, alegria e tranquilidade que o acampamento proporciona. Viva a experiência antes mesmo de chegar!</p>
                 <div class="photo-video-grid">
-                    <div class="media-container"><video src="videos/VID-20250918-WA0022.mp4" controls poster="videos/IMG-20250918-WA0010.jpg"></video></div>
-                    <div class="media-container"><video src="videos/VID-20250918-WA0023.mp4" controls poster="videos/IMG-20250918-WA0011.jpg"></video></div>
-                    <div class="media-container"><video src="videos/VID-20250918-WA0024.mp4" controls poster="videos/IMG-20250918-WA0012.jpg"></video></div>
-                    <div class="media-container"><video src="videos/VID-20250918-WA0025.mp4" controls poster="videos/IMG-20250918-WA0013.jpg"></video></div>
-                    <div class="media-container"><video src="videos/VID-20250918-WA0026.mp4" controls poster="videos/IMG-20250918-WA0014.jpg"></video></div>
+                    <div class="media-container"><video src="videos/VID-20250918-WA0022.mp4" controls poster="videos/IMG-20250918-WA0010.jpg" class="vertical-video gallery-video"></video></div>
+                    <div class="media-container"><video src="videos/VID-20250918-WA0023.mp4" controls poster="videos/IMG-20250918-WA0011.jpg" class="gallery-video"></video></div>
+                    <div class="media-container"><video src="videos/VID-20250918-WA0024.mp4" controls poster="videos/IMG-20250918-WA0012.jpg" class="vertical-video gallery-video"></video></div>
+                    <div class="media-container"><video src="videos/VID-20250918-WA0025.mp4" controls poster="videos/IMG-20250918-WA0013.jpg" class="gallery-video"></video></div>
+                    <div class="media-container"><video src="videos/VID-20250918-WA0026.mp4" controls poster="videos/IMG-20250918-WA0014.jpg" class="vertical-video gallery-video"></video></div>
                 </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>
+        <script>
+        // Ao clicar em play, coloca o vídeo em fullscreen
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.media-container video').forEach(function(video) {
+                video.addEventListener('play', function() {
+                    if (document.fullscreenElement) return;
+                    if (video.requestFullscreen) {
+                        video.requestFullscreen();
+                    } else if (video.webkitRequestFullscreen) {
+                        video.webkitRequestFullscreen();
+                    } else if (video.msRequestFullscreen) {
+                        video.msRequestFullscreen();
+                    }
+                });
+            });
+        });
+        </script>
+        <footer>
+        <style>
+        .lightbox-video {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.97);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+        }
+        .lightbox-video.active {
+            display: flex;
+        }
+        .lightbox-video-player {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            background: #222;
+            outline: none;
+        }
+        .lightbox-video-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 18px;
+            align-items: center;
+        }
+        .lightbox-video-btn {
+            background: #fff;
+            color: #333;
+            border: none;
+            font-size: 2rem;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            margin: 0 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            transition: background 0.2s;
+        }
+        .lightbox-video-btn:hover {
+            background: #eee;
+        }
+        .lightbox-video-close {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            background: #fff;
+            color: #333;
+            border: none;
+            font-size: 2.2rem;
+            border-radius: 50%;
+            width: 52px;
+            height: 52px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            transition: background 0.2s;
+            z-index: 10001;
+        }
+        .lightbox-video-close:hover {
+            background: #eee;
+        }
+        </style>
+
+        <div class="lightbox-video" id="lightboxVideo">
+            <button class="lightbox-video-close" id="lightboxVideoClose" title="Fechar">&times;</button>
+            <video src="" controls class="lightbox-video-player" id="lightboxVideoPlayer"></video>
+            <div class="lightbox-video-controls">
+                <button class="lightbox-video-btn" id="lightboxVideoPrev" title="Anterior">&#8592;</button>
+                <button class="lightbox-video-btn" id="lightboxVideoNext" title="Próximo">&#8594;</button>
+            </div>
+        </div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <span class="main-title"></span>
                     <span class="sub-title">Jardim Algarve</span>
-                </div>
-                <p>&copy; 2025 - Todos os direitos reservados</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+                    <style>
+                    .lightbox {
+                        display: none;
+                        position: fixed;
+                        top: 0; left: 0; width: 100vw; height: 100vh;
+                        background: rgba(0,0,0,0.95);
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 9999;
+                        flex-direction: column;
+                    }
+                    .lightbox.active {
+                        display: flex;
+                    }
+                    .lightbox-img {
+                        max-width: 90vw;
+                        max-height: 80vh;
+                        border-radius: 18px;
+                        box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+                        background: #222;
+                    }
+                    .lightbox-controls {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        margin-top: 18px;
+                        align-items: center;
+                    }
+                    .lightbox-btn {
+                        background: #fff;
+                        color: #333;
+                        border: none;
+                        font-size: 2rem;
+                        border-radius: 50%;
+                        width: 48px;
+                        height: 48px;
+                        cursor: pointer;
+                        margin: 0 24px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+                        transition: background 0.2s;
+                    }
+                    .lightbox-btn:hover {
+                        background: #eee;
+                    }
+                    .lightbox-close {
+                        position: absolute;
+                        top: 32px;
+                        right: 32px;
+                        background: #fff;
+                        color: #333;
+                        border: none;
+                        font-size: 2.2rem;
+                        border-radius: 50%;
+                        width: 52px;
+                        height: 52px;
+                        cursor: pointer;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+                        transition: background 0.2s;
+                        z-index: 10001;
+                    }
+                    .lightbox-close:hover {
+                        background: #eee;
+                    }
+                    </style>
+
+                    <div class="lightbox" id="lightbox">
+                        <button class="lightbox-close" id="lightboxClose" title="Fechar">&times;</button>
+                        <img src="" alt="" class="lightbox-img" id="lightboxImg">
+                        <div class="lightbox-controls">
+                            <button class="lightbox-btn" id="lightboxPrev" title="Anterior">&#8592;</button>
+                            <button class="lightbox-btn" id="lightboxNext" title="Próxima">&#8594;</button>
+                        </div>
+                    </div>
+
+                        <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Vídeos: fullscreen ao play (no grid)
+                            document.querySelectorAll('.media-container video').forEach(function(video) {
+                                video.addEventListener('play', function() {
+                                    if (document.fullscreenElement) return;
+                                    if (video.requestFullscreen) {
+                                        video.requestFullscreen();
+                                    } else if (video.webkitRequestFullscreen) {
+                                        video.webkitRequestFullscreen();
+                                    } else if (video.msRequestFullscreen) {
+                                        video.msRequestFullscreen();
+                                    }
+                                });
+                            });
+
+                            // Lightbox para imagens
+                            const imgs = Array.from(document.querySelectorAll('.gallery-img'));
+                            const lightbox = document.getElementById('lightbox');
+                            const lightboxImg = document.getElementById('lightboxImg');
+                            const lightboxClose = document.getElementById('lightboxClose');
+                            const lightboxPrev = document.getElementById('lightboxPrev');
+                            const lightboxNext = document.getElementById('lightboxNext');
+                            let currentIdx = 0;
+
+                            function showLightbox(idx) {
+                                currentIdx = idx;
+                                lightboxImg.src = imgs[idx].src;
+                                lightboxImg.alt = imgs[idx].alt;
+                                lightbox.classList.add('active');
+                                if (lightbox.requestFullscreen) {
+                                    lightbox.requestFullscreen();
+                                } else if (lightbox.webkitRequestFullscreen) {
+                                    lightbox.webkitRequestFullscreen();
+                                } else if (lightbox.msRequestFullscreen) {
+                                    lightbox.msRequestFullscreen();
+                                }
+                            }
+
+                            imgs.forEach((img, idx) => {
+                                img.addEventListener('click', () => showLightbox(idx));
+                            });
+
+                            function closeLightbox() {
+                                lightbox.classList.remove('active');
+                                lightboxImg.src = '';
+                                if (document.fullscreenElement && document.exitFullscreen) {
+                                    document.exitFullscreen();
+                                }
+                            }
+                            lightboxClose.addEventListener('click', closeLightbox);
+                            lightbox.addEventListener('click', function(e) {
+                                if (e.target === lightbox) closeLightbox();
+                            });
+
+                            function showPrev() {
+                                currentIdx = (currentIdx - 1 + imgs.length) % imgs.length;
+                                showLightbox(currentIdx);
+                            }
+                            function showNext() {
+                                currentIdx = (currentIdx + 1) % imgs.length;
+                                showLightbox(currentIdx);
+                            }
+                            lightboxPrev.addEventListener('click', function(e) { e.stopPropagation(); showPrev(); });
+                            lightboxNext.addEventListener('click', function(e) { e.stopPropagation(); showNext(); });
+
+                            document.addEventListener('keydown', function(e) {
+                                if (!lightbox.classList.contains('active')) return;
+                                if (e.key === 'Escape') closeLightbox();
+                                if (e.key === 'ArrowLeft') showPrev();
+                                if (e.key === 'ArrowRight') showNext();
+                            });
+
+                            // Lightbox para vídeos
+                            const videos = Array.from(document.querySelectorAll('.gallery-video'));
+                            const lightboxVideo = document.getElementById('lightboxVideo');
+                            const lightboxVideoPlayer = document.getElementById('lightboxVideoPlayer');
+                            const lightboxVideoClose = document.getElementById('lightboxVideoClose');
+                            const lightboxVideoPrev = document.getElementById('lightboxVideoPrev');
+                            const lightboxVideoNext = document.getElementById('lightboxVideoNext');
+                            let currentVideoIdx = 0;
+
+                            function showVideoLightbox(idx) {
+                                currentVideoIdx = idx;
+                                lightboxVideoPlayer.src = videos[idx].src;
+                                lightboxVideoPlayer.poster = videos[idx].getAttribute('poster');
+                                lightboxVideoPlayer.className = 'lightbox-video-player ' + (videos[idx].classList.contains('vertical-video') ? 'vertical-video' : '');
+                                lightboxVideo.classList.add('active');
+                                lightboxVideoPlayer.currentTime = 0;
+                                lightboxVideoPlayer.play();
+                                if (lightboxVideo.requestFullscreen) {
+                                    lightboxVideo.requestFullscreen();
+                                } else if (lightboxVideo.webkitRequestFullscreen) {
+                                    lightboxVideo.webkitRequestFullscreen();
+                                } else if (lightboxVideo.msRequestFullscreen) {
+                                    lightboxVideo.msRequestFullscreen();
+                                }
+                            }
+
+                            videos.forEach((vid, idx) => {
+                                vid.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    showVideoLightbox(idx);
+                                });
+                            });
+
+                            function closeVideoLightbox() {
+                                lightboxVideo.classList.remove('active');
+                                lightboxVideoPlayer.pause();
+                                lightboxVideoPlayer.src = '';
+                                if (document.fullscreenElement && document.exitFullscreen) {
+                                    document.exitFullscreen();
+                                }
+                            }
+                            lightboxVideoClose.addEventListener('click', closeVideoLightbox);
+                            lightboxVideo.addEventListener('click', function(e) {
+                                if (e.target === lightboxVideo) closeVideoLightbox();
+                            });
+
+                            function showVideoPrev() {
+                                currentVideoIdx = (currentVideoIdx - 1 + videos.length) % videos.length;
+                                showVideoLightbox(currentVideoIdx);
+                            }
+                            function showVideoNext() {
+                                currentVideoIdx = (currentVideoIdx + 1) % videos.length;
+                                showVideoLightbox(currentVideoIdx);
+                            }
+                            lightboxVideoPrev.addEventListener('click', function(e) { e.stopPropagation(); showVideoPrev(); });
+                            lightboxVideoNext.addEventListener('click', function(e) { e.stopPropagation(); showVideoNext(); });
+
+                            document.addEventListener('keydown', function(e) {
+                                if (!lightboxVideo.classList.contains('active')) return;
+                                if (e.key === 'Escape') closeVideoLightbox();
+                                if (e.key === 'ArrowLeft') showVideoPrev();
+                                if (e.key === 'ArrowRight') showVideoNext();
+                            });
+                        });
+                        </script>
+                    </script>
