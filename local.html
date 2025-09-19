@@ -182,8 +182,8 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             position: relative;
-            padding-bottom: 56.25%; /* Proporção 16:9 para vídeos */
-            height: 0;
+            aspect-ratio: 16/9;
+            height: auto;
         }
 
         .media-container iframe,
@@ -194,6 +194,14 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        .media-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         footer {
@@ -279,26 +287,32 @@
                 </p>
                 
                 <div class="photo-video-grid">
-                    <div class="media-container">
-                        <img src="https://www.youtube.com/embed/dQw4waasasas9assasWgXcQ" alt="Local do Acampamento - Foto 1">
-                    </div>
-                    <div class="media-container">
-                        <img src="https://www.youtube.com/embed/dQw4waasasas9assasWgXcQ" alt="Local do Acampamento - Foto 2">
-                    </div>
-                    
-                    <div class="media-container">
-                        <iframe src="https://www.youtube.com/embed/dQw4waasasas9assasWgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-container">
-                        <iframe src="https://www.youtube.com/embed/dQw4waasasas9assasWgXcQ" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-
-                    <div class="media-container">
-                        <img src="https://www.youtube.com/embed/dQw4waasasas9assasWgXcQ" alt="Local do Acampamento - Foto 3">
-                    </div>
-                    <div class="media-container">
-                        <img src="https://www.youtube.com/embed/dQw4waasasas9assasWgXcQ" alt="Local do Acampamento - Foto 4">
-                    </div>
+                </div>
+                <!-- Seção de Fotos -->
+                <h3 style="margin-top:2.5rem; margin-bottom:1rem; text-align:center; color:var(--color-green-accent); font-size:2rem; font-weight:700; letter-spacing:1px;">Momentos Registrados em Fotos</h3>
+                <p style="text-align:center; color:#666; margin-bottom:1.5rem; font-size:1.08rem;">Veja os melhores ângulos e detalhes do nosso espaço, natureza e estrutura. Cada imagem revela um pouco da atmosfera acolhedora do Jardim Algarve.</p>
+                <div class="photo-video-grid">
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0010.jpg" alt="Foto 1 - Jardim Algarve"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0011.jpg" alt="Foto 2 - Jardim Algarve"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0012.jpg" alt="Foto 3 - Jardim Algarve"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0013.jpg" alt="Foto 4 - Jardim Algarve"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0014.jpg" alt="Foto 5 - Jardim Algarve"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0015.jpg" alt="Foto 6 - Jardim Algarve"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0016.jpg" alt="Foto 7 - Jardim Algarve"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0017.jpg" alt="Foto 8 - Jardim Algarve"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0018.jpg" alt="Foto 9 - Jardim Algarve"></div>
+                    <div class="media-container"><img src="videos/IMG-20250918-WA0019.jpg" alt="Foto 10 - Jardim Algarve"></div>
+                </div>
+                <!-- Seção de Vídeos -->
+                <h3 style="margin-top:2.5rem; margin-bottom:1rem; text-align:center; color:#e74c3c; font-size:2rem; font-weight:700; letter-spacing:1px;">Experiência em Vídeos</h3>
+                <p style="text-align:center; color:#666; margin-bottom:1.5rem; font-size:1.08rem;">Assista aos vídeos e sinta um pouco da energia, alegria e tranquilidade que o acampamento proporciona. Viva a experiência antes mesmo de chegar!</p>
+                <div class="photo-video-grid">
+                    <div class="media-container"><video src="videos/VID-20250918-WA0022.mp4" controls poster="videos/IMG-20250918-WA0010.jpg"></video></div>
+                    <div class="media-container"><video src="videos/VID-20250918-WA0023.mp4" controls poster="videos/IMG-20250918-WA0011.jpg"></video></div>
+                    <div class="media-container"><video src="videos/VID-20250918-WA0024.mp4" controls poster="videos/IMG-20250918-WA0012.jpg"></video></div>
+                    <div class="media-container"><video src="videos/VID-20250918-WA0025.mp4" controls poster="videos/IMG-20250918-WA0013.jpg"></video></div>
+                    <div class="media-container"><video src="videos/VID-20250918-WA0026.mp4" controls poster="videos/IMG-20250918-WA0014.jpg"></video></div>
+                </div>
                 </div>
             </div>
         </div>
